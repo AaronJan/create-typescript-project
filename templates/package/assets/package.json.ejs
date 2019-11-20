@@ -1,0 +1,34 @@
+{
+    "name": "<%= name %>",
+    "version": "<%= version %>",
+    <% if (locals.description !== undefined) { %>
+    "description": "<%= description %>",
+    <% } %>
+    "main": "dist/index.js",
+    "typings": "./dist/index.d.ts",
+    "files": [
+        "dist/",
+        "package.json",
+        "README.md",
+        "LICENSE"
+    ],
+    "scripts": {
+        "test": "jest",
+        "test:cov": "jest --coverage",
+        "clean": "rimraf ./dist/ ./tsconfig.build.tsbuildinfo",
+        "compile": "tsc -p tsconfig.json",
+        "build": "npm run clean && npm run compile",
+        "prepublishOnly": "npm run build",
+        "eslint:check": "eslint src/**/*.ts",
+        "eslint:fix": "npm run eslint:check -- --fix",
+        "prettier:cli": "prettier \"src/**/*.ts\" \"src/**/*.js\"",
+        "prettier:check": "npm run prettier:cli -- -l",
+        "prettier:fix": "npm run prettier:cli -- --write"
+    },
+    "keywords": [],
+    "author": {
+        "name": "AaronJan",
+        "url": "https://github.com/AaronJan"
+    },
+    "license": "Apache-2.0"
+}

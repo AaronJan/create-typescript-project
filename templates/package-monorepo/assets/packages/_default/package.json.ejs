@@ -1,0 +1,25 @@
+{
+    "name": "<%= monorepo.defaultPackage.packageName %>",
+    "version": "<%= version %>",
+    "main": "dist/index.js",
+    "typings": "./dist/index.d.ts",
+    "files": [
+        "dist/",
+        "package.json",
+        "README.md",
+        "LICENSE"
+    ],
+    "scripts": {
+        "test": "jest",
+        "test:cov": "jest --coverage",
+        "clean": "rimraf ./dist/ ./tsconfig.build.tsbuildinfo",
+        "compile": "tsc -b tsconfig.build.json",
+        "build": "npm run clean && npm run compile"
+    },
+    "keywords": [],
+    "author": {
+        "name": "AaronJan",
+        "url": "https://github.com/AaronJan"
+    },
+    "license": "Apache-2.0"
+}

@@ -1,0 +1,66 @@
+{
+  "name": "@aaronjan/create-typescript-project",
+  "version": "1.0.0",
+  "description": "Scaffolding tool for various types of TypeScript projects.",
+  "engines": {
+    "node": ">=12"
+  },
+  "bin": "bin/index.js",
+  "files": [
+    "bin/",
+    "dist/",
+    "templates/",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "jest",
+    "test:cov": "jest --coverage",
+    "clean": "rimraf ./dist/ ./tsconfig.build.tsbuildinfo",
+    "compile": "tsc -p tsconfig.json",
+    "build": "npm run clean && npm run compile",
+    "prepublishOnly": "npm run build",
+    "eslint:check": "eslint src/**.ts",
+    "eslint:fix": "npm run eslint:check -- --fix",
+    "prettier:cli": "prettier \"src/**/*.ts\" \"src/**/*.js\"",
+    "prettier:check": "npm run prettier:cli -- -l",
+    "prettier:fix": "npm run prettier:cli -- --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AaronJan/create-typescript-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/AaronJan/create-typescript-project/issues"
+  },
+  "homepage": "https://github.com/AaronJan/create-typescript-project#readme",
+  "devDependencies": {
+    "@types/ejs": "^2.6.3",
+    "@types/jest": "^24.0.23",
+    "@types/mock-fs": "^4.10.0",
+    "@types/semver": "^6.2.0",
+    "@typescript-eslint/eslint-plugin": "^2.8.0",
+    "@typescript-eslint/parser": "^2.8.0",
+    "chokidar-cli": "^2.1.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-eslint-plugin": "^2.1.0",
+    "jest": "^24.9.0",
+    "mock-fs": "^4.10.3",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.0",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "commander": "^4.0.1",
+    "ejs": "^2.7.4",
+    "envinfo": "^7.4.0",
+    "semver": "^6.3.0",
+    "validate-npm-package-name": "^3.0.0"
+  }
+}

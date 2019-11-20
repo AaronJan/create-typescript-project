@@ -1,0 +1,7 @@
+jest.config.js
+.prettierrc
+.eslintrc.js
+/templates/
+/dist/
+/dev/
+/bin/

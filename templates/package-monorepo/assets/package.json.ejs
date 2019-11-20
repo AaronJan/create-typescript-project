@@ -1,0 +1,14 @@
+{
+    "name": "<%= name %>",
+    "private": true,
+    <% if (locals.description !== undefined) { %>
+    "description": "<%= description %>",
+    <% } %>
+    "scripts": {
+        "eslint:check": "eslint packages/*/src/**.ts",
+        "eslint:fix": "npm run eslint:check -- --fix",
+        "prettier:cli": "prettier \"packages/*/src/**.ts\" \"packages/*/src/**.js\"",
+        "prettier:check": "npm run prettier:cli -- -l",
+        "prettier:fix": "npm run prettier:cli -- --write"
+    }
+}
