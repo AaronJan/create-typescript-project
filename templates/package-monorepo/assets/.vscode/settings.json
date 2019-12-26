@@ -18,14 +18,14 @@
 
     "typescript.tsdk": "node_modules/typescript/lib",
 
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": false,
+    },
+
     "eslint.run": "onSave",
-    "eslint.autoFixOnSave": false,
     "eslint.nodePath": "./node_modules",
     "eslint.validate": [
         "javascript",
-        {
-            "language": "typescript",
-            "autoFix": true
-        }
+        "typescript"
     ]
 }

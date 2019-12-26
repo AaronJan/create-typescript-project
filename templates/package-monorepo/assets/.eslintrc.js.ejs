@@ -1,10 +1,11 @@
 module.exports = {
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "project": "./tsconfig.eslint.json",
+        "project": "./packages/**/tsconfig.eslint.json",
+        ecmaVersion: 2018,
+        sourceType: 'module',
     },
     'plugins': [
-        'eslint-plugin',
         '@typescript-eslint',
     ],
     'env': {
@@ -14,6 +15,7 @@ module.exports = {
         'jest': true,
     },
     'extends': [
+        "prettier",
         "eslint:recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended"
@@ -30,11 +32,8 @@ module.exports = {
                 null: 'ignore',
             }
         ],
-        "semi": ["error", "always"],
-        "quotes": ["error", "single", { "avoidEscape": true }],
         "@typescript-eslint/no-angle-bracket-type-assertion": 'off',
         '@typescript-eslint/class-name-casing': 'error',
-        "@typescript-eslint/indent": ["error", 2],
         '@typescript-eslint/no-parameter-properties': 'off',
         '@typescript-eslint/no-unnecessary-type-assertion': ["error"],
         '@typescript-eslint/no-var-requires': 'off',
